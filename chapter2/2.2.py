@@ -17,5 +17,5 @@ print(message1+" "+"\n"+message2)
 # \n换行符，\t制表符
 
 # test 4
-# lstrip()删除字符串开头多余的空格，rstrip()删除字符串末尾多余的空格
+# lstrip()删除字符串开头多余的空格，rstrip()删除字符串末尾多余的空格；strip()删除字符串两头的空格
 print(message2.lstrip())
