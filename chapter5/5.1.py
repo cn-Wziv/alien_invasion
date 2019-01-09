@@ -52,3 +52,10 @@ print(bool__)
 布尔表达式，要么为True，要么为False
 注意True和False的首字母必须大写
 '''
+
+# test 6
+# 确定列表不空
+if cars:
+    print("列表不空")
+else:
+    print("列表为空")
