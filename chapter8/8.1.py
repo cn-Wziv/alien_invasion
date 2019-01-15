@@ -82,10 +82,17 @@ print("=========================================================================
 # test 10
 '''
 传递任意数量的参数
-形参设置成指针形式，调用时传递的若干参数全部存储在相应的列表中
+形参设置成指针形式，调用时传递的若干参数全部存储在相应的列表或字典中
+可以与各种方式的传参方法结合：位置实参+任意数量的参数；
 '''
-def make_pizza(*toppings):
+def make_pizza(*toppings):  #任意参数存在列表中
     for topping in toppings:
         print(topping)
 
 make_pizza('mushrooms', 'green peppers', 'extra cheese')
+
+def sell_book(**books):
+    for name,price in books.items():
+        print(name,price)
+
+sell_book(a=12, b=13, c=14)
