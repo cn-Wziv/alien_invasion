@@ -1,11 +1,15 @@
 import sys
 import pygame
+from pygame.sprite import Sprite
 
 class Ship():
     '''
     飞船的行为
     '''
     def __init__(self, ai_settings, screen):
+        
+        super(Ship, self).__init__()
+
         self.screen = screen
         self.ai_settings = ai_settings
 
@@ -27,6 +31,9 @@ class Ship():
         self.moving_right = False
         self.moving_left = False
 
+    def center_ship(self):
+        self.center = self.screen_rect.centerx
+
     def update(self):
         # 根据移动标志调整飞船的位置，且限制飞船的移动范围
         if self.moving_right and self.rect.right < self.screen_rect.right:
@@ -43,5 +50,3 @@ class Ship():
         self.screen.blit(self.image, self.rect)
 
 
-    def center_ship(self):
-        self.center = self.screen_rect.centerx

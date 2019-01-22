@@ -7,6 +7,7 @@ class Alien(Sprite):
     '''
     def __init__(self, ai_settings, screen):
         super(Alien, self).__init__()
+
         self.screen = screen
         self.ai_settings = ai_settings
 
@@ -21,9 +22,6 @@ class Alien(Sprite):
         # 外星人的准确位置
         self.x = float(self.rect.x)
 
-    def blitme(self):
-        # 在指定位置绘制外星人
-        self.screen.blit(self.image, self.rect)
 
     def check_edges(self):
         # 若外星人到达左右边缘，返回True
@@ -33,8 +31,13 @@ class Alien(Sprite):
         elif self.rect.left <= 0:
             return True
 
+
     def update(self):
         # 向右移动外星人
         self.x += (self.ai_settings.alien_speed_factor *
                         self.ai_settings.fleet_direction)
         self.rect.x = self.x
+
+    def blitme(self):
+        # 在指定位置绘制外星人
+        self.screen.blit(self.image, self.rect)
